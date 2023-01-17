@@ -1,15 +1,33 @@
 const form = document.getElementById('novoItem')
 const lista = document.getElementById("lista")
+const itens = JSON.parse(localStorage.getItem("itens")) || [];
 
-form.addEventListener("submit", (event)=>{
-    event.preventDefault();
-    adicionarObjeto(event.target.elements['nome'].value, event.target.elements['quantidade'].value);
+itens.forEach((element) => {
+    criarElemento(element);
 })
 
-function adicionarObjeto(nome, quantidade){
-    /* console.log(nome);
-    console.log(quantidade); */
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
+    const nome = event.target.elements['nome'];
+    const quantidade = event.target.elements['quantidade']
+
+    const itemAtual = {
+        "nome": nome.value,
+        "quantidade": quantidade.value
+    }
+
+    criarElemento(itemAtual);
+
+    itens.push(itemAtual)
+
+    localStorage.setItem("itens", JSON.stringify(itens))
+
+    nome.value = "";
+    quantidade.value = "";
+})
+
+function criarElemento(item) {
     //Cria um novo elemento li
     const novoItem = document.createElement('li');
     //Adiciona a classe item nele
@@ -18,13 +36,14 @@ function adicionarObjeto(nome, quantidade){
     //Cria um novo elemento strong
     const numeroItem = document.createElement('strong')
     //O elemento strong recebe a quantidade
-    numeroItem.innerHTML = quantidade;
+    numeroItem.innerHTML = item.quantidade;
 
     //Adiciona o elemento numeroItem dentro do novoItem
     novoItem.appendChild(numeroItem);
-    novoItem.innerHTML += nome;
+    novoItem.innerHTML += item.nome;
 
     //Adiciona o elemento novoItem dentro da lista 
     lista.appendChild(novoItem);
-    
 }
+
+console.log(localStorage.getItem())
