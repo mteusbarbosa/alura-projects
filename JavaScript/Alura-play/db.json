@@ -83,6 +83,13 @@
       "url": "https://www.youtube.com/embed/IGFSiBJIXFQ",
       "imagem": "https://purr.objects-us-east-1.dream.io/i/OoNx6.jpg",
       "id": 12
+    },
+    {
+      "titulo": "Blazor: o que é, WebAssembly e o uso de C# no Front-End",
+      "descricao": "2 mil visualizações",
+      "url": "https://www.youtube.com/embed/VxPvnLGz8QQ",
+      "imagem": "https://purr.objects-us-east-1.dream.io/i/OoNx6.jpg",
+      "id": 13
     }
   ]
 }
