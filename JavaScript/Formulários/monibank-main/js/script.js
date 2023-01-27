@@ -13,6 +13,7 @@ formulario.addEventListener("submit", (e) => {
         "aniversario": e.target.elements["aniversario"].value
      }
 
+     //Cria o objeto json cadastro
      localStorage.setItem("cadastro", JSON.stringify(listaRespostas))
 
      window.location.href = './abrir-conta-form-2.html'
