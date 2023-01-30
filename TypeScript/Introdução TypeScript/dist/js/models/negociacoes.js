@@ -7,6 +7,5 @@ export class Negociacoes {
     }
     lista() {
         return this.negociacoes;
-        /* Método para retornar um novo array para não ser modificado de forma indevida >> return [...this.negociacoes]; */
     }
 }
