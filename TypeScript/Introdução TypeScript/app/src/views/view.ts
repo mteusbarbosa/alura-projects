@@ -1,3 +1,4 @@
+import { inspect } from "../decorators/inspect.js";
 import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
 
 //O diamante <T> aceita qualquer tipo que vier
@@ -17,7 +18,8 @@ export abstract class View<T> {
     if (escapar) this.escapar = escapar;
   }
 
-  @logarTempoDeExecucao()
+  @logarTempoDeExecucao(true)
+  @inspect()
   public update(model: T): void {
     let template = this.template(model);
     if (this.escapar) {
