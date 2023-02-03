@@ -8,14 +8,15 @@ if (form) {
     });
 }
 else {
-    throw Error('Não foi possível inicializar a aplicação. Verficique se o form existe.');
+    throw Error("Não foi possível inicializar a aplicação. Verficique se o form existe.");
 }
-const botaoImporta = document.querySelector('#botao-importa');
+const botaoImporta = document.querySelector("#botao-importa");
 if (botaoImporta) {
-    botaoImporta.addEventListener('click', () => {
+    botaoImporta.addEventListener("click", () => {
         controller.importaDados();
     });
 }
 else {
-    throw Error('Botão importa não foi encontrado');
+    throw Error("Botão importa não foi encontrado");
 }
+//# sourceMappingURL=app.js.map

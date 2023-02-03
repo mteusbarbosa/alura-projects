@@ -32,7 +32,7 @@ export function logarTempoDeExecucao(emSegundos: boolean = false) {
         //chamar o método original
         const retorno = metodoOriginal.apply(this, args);
         const t2 = performance.now();
-        console.log(`${propertyKey}, tempo de execução: ${(t2-t1)/divisor} ${unidade}`)
+        /* console.log(`${propertyKey}, tempo de execução: ${(t2-t1)/divisor} ${unidade}`) */
         return retorno;
     };
 

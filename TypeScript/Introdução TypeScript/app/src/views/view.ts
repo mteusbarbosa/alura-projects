@@ -1,6 +1,3 @@
-import { inspect } from "../decorators/inspect.js";
-import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
-
 //O diamante <T> aceita qualquer tipo que vier
 export abstract class View<T> {
   //propriedade
@@ -14,10 +11,9 @@ export abstract class View<T> {
     } else {
       throw Error(`Seletor ${seletor} não existe no DOM`);
     }
-    
   }
 
- /*  @logarTempoDeExecucao(true)
+  /*  @logarTempoDeExecucao(true)
   @inspect */
   public update(model: T): void {
     let template = this.template(model);

@@ -1,4 +1,6 @@
-export class Negociacao {
+import { Modelo } from "./../Interfaces/modelo.js";
+
+export class Negociacao implements Modelo<Negociacao> {
   constructor(
     private _data: Date,
     public readonly quantidade: number,
@@ -32,5 +34,13 @@ export class Negociacao {
       Quantidade: ${this.quantidade}
       Valor: ${this.valor}
       `;
+  }
+
+  public ehIgual(negociacao: Negociacao): boolean {
+    return (
+      this.data.getDate() === negociacao.data.getDate() &&
+      this.data.getMonth() === negociacao.data.getMonth() &&
+      this.data.getFullYear() === negociacao.data.getFullYear()
+    );
   }
 }

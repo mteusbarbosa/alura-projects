@@ -1,4 +1,3 @@
-import { NegociacoesView } from "./views/negociacoes-view.js";
 import { NegociacaoController } from "./controllers/negociacao-controller.js";
 
 const controller = new NegociacaoController();
@@ -8,15 +7,17 @@ if (form) {
     event.preventDefault();
     controller.adiciona();
   });
-}else{
-    throw Error('Não foi possível inicializar a aplicação. Verficique se o form existe.')
+} else {
+  throw Error(
+    "Não foi possível inicializar a aplicação. Verficique se o form existe."
+  );
 }
 
-const botaoImporta = document.querySelector('#botao-importa')
-if(botaoImporta){
-  botaoImporta.addEventListener('click', () =>{
+const botaoImporta = document.querySelector("#botao-importa");
+if (botaoImporta) {
+  botaoImporta.addEventListener("click", () => {
     controller.importaDados();
-  })
-}else{
-  throw Error('Botão importa não foi encontrado')
+  });
+} else {
+  throw Error("Botão importa não foi encontrado");
 }

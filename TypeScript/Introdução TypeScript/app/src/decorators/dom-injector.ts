@@ -11,9 +11,9 @@ export function domInjector(seletor: string) {
       //se não existe o elemento, elemento recebe o querySelector, mas se existir passa direto
       if (!elemento) {
         elemento = <HTMLElement>document.querySelector(seletor);
-        console.log(
+        /* console.log(
           `Buscando elemento do DOM com o seletor ${seletor} para injetar em ${propertyKey}`
-        );
+        ); */
       }
       return elemento;
     };

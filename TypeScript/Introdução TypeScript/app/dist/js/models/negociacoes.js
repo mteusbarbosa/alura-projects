@@ -11,4 +11,8 @@ export class Negociacoes {
     paraTexto() {
         return JSON.stringify(this.negociacoes, null, 2);
     }
+    ehIgual(objeto) {
+        return JSON.stringify(this.negociacoes) === JSON.stringify(objeto);
+    }
 }
+//# sourceMappingURL=negociacoes.js.map
